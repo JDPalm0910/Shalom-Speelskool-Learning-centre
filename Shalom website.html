@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shalom Speelskool/Learning centre</title>
+
+    <meta name="description"
+          content="A loving Christian preschool where children learn, grow and shine in God's love.">
+
+    <style>
+        /* =====================================
+           GENERAL STYLING
+        ===================================== */
+
+        :root {
+            --primary: #477a69;
+            --primary-dark: #315b4d;
+            --secondary: #f5d99c;
+            --cream: #fffaf0;
+            --pink: #f6e4df;
+            --text: #35453d;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        section {
+            padding: 75px 7%;
+            scroll-margin-top: 90px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* =====================================
+           HEADER AND NAVIGATION
+        ===================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: auto;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #d6a44b;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .language-switch {
+            display: flex;
+            gap: 5px;
+        }
+
+        .language-switch button {
+            padding: 8px 12px;
+            border: 1px solid var(--primary);
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .language-switch button.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* =====================================
+           HERO SECTION
+        ===================================== */
+
+        .hero {
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(30, 61, 48, 0.86),
+                    rgba(30, 61, 48, 0.35)
+                ),
+                url("images/school-hero.jpg") center/cover no-repeat,
+                #739786;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 28px;
+        }
+
+        .hero .btn {
+            background: var(--secondary);
+            color: var(--text);
+        }
+
+        /* =====================================
+           ABOUT SECTION
+        ===================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            min-height: 350px;
+            object-fit: cover;
+            border-radius: 25px;
+            background: #e3e8df;
+        }
+
+        .about-text h3 {
+            color: var(--primary-dark);
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+        }
+
+        .verse {
+            background: var(--secondary);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 25px;
+            font-style: italic;
+        }
+
+        /* =====================================
+           VALUES
+        ===================================== */
+
+        .values-section {
+            background: var(--pink);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        /* =====================================
+           CLASSES
+        ===================================== */
+
+        .class-card {
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .class-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #e5e9e3;
+        }
+
+        .class-card .card-content {
+            padding: 25px;
+        }
+
+        /* =====================================
+           PHOTO GALLERY
+        ===================================== */
+
+        .gallery-section {
+            background: #edf3ec;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: #dce5dc;
+            min-height: 220px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 12px 12px;
+            color: white;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        }
+
+        /* =====================================
+           VIDEO GALLERY
+        ===================================== */
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .video-card {
+            background: white;
+            padding: 15px;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .video-card video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #253b32;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .video-card h3 {
+            margin-top: 15px;
+            color: var(--primary-dark);
+        }
+
+        /* =====================================
+           TEACHERS
+        ===================================== */
+
+        .teacher-card {
+            text-align: center;
+        }
+
+        .teacher-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e5e9e3;
+            margin-bottom: 15px;
+        }
+
+        /* =====================================
+           EVENTS
+        ===================================== */
+
+        .events-section {
+            background: var(--pink);
+        }
+
+        .event-card {
+            border-left: 5px solid var(--primary);
+        }
+
+        .event-date {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        /* =====================================
+           ADMISSIONS
+        ===================================== */
+
+        .admissions-box {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 45px 25px;
+            border-radius: 25px;
+        }
+
+        .admissions-box h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .admissions-box .btn {
+            margin-top: 20px;
+            background: var(--secondary);
+            color: var(--text);
+        }
+
+        /* =====================================
+           CONTACT FORM
+        ===================================== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin: 12px 0 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd7cf;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 0.85rem;
+            margin-top: 12px;
+            color: #58685e;
+        }
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        footer {
+            background: #294b3f;
+            color: white;
+            text-align: center;
+            padding: 35px 7%;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        footer a {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================
+           FEES, HOURS AND ACTIVITIES
+        ===================================== */
+        .fees-section {
+            background: var(--cream);
+        }
+
+        .fees-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .fees-card {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 20px;
+            border: 1px solid #e1e9df;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .fees-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .fees-card ul {
+            padding-left: 22px;
+        }
+
+        .fees-card li {
+            margin: 8px 0;
+        }
+
+        .fees-card p {
+            margin-top: 8px;
+        }
+
+        .fees-card.highlight {
+            background: #fff5df;
+            border-color: #f1dfb7;
+        }
+
+        .fees-motto {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.35rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+        /* =====================================
+           MOBILE RESPONSIVENESS
+        ===================================== */
+
+        @media (max-width: 1000px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            section {
+                padding: 55px 5%;
+            }
+
+            .about-grid,
+            .contact-grid,
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-grid,
+            .gallery-grid,
+            .fees-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 480px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.9rem;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header>
+    <div class="navbar">
+
+        <a href="#home" class="logo">
+            Shalom Speelskool <span>Learning Centre</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="#home" data-en="Home" data-af="Tuis">Home</a>
+            <a href="#about" data-en="About Us" data-af="Oor Ons">About Us</a>
+            <a href="#values" data-en="Our Faith" data-af="Ons Geloof">Our Faith</a>
+            <a href="#classes" data-en="Classes" data-af="Klasse">Classes</a>
+            <a href="#fees" data-en="Fees & Activities" data-af="Fooie & Aktiwiteite">Fees & Activities</a>
+            <a href="#gallery" data-en="Gallery" data-af="Fotogalery">Gallery</a>
+            <a href="#videos" data-en="Videos" data-af="Video's">Videos</a>
+            <a href="#teachers" data-en="Teachers" data-af="Onderwysers">Teachers</a>
+            <a href="#admissions" data-en="Admissions" data-af="Inskrywings">Admissions</a>
+            <a href="#contact" data-en="Contact" data-af="Kontak">Contact</a>
+        </nav>
+
+        <div class="language-switch" aria-label="Choose language">
+            <button type="button"
+                    class="active"
+                    id="englishBtn"
+                    onclick="setLanguage('en')">
+                English
+            </button>
+
+            <button type="button"
+                    id="afrikaansBtn"
+                    onclick="setLanguage('af')">
+                Afrikaans
+            </button>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =====================================
+     HOME / HERO
+===================================== -->
+
+<section class="hero" id="home">
+    <div class="container hero-content">
+
+        <h1 data-en="Little Hearts, Big Dreams, God's Love"
+            data-af="Klein Hartjies, Groot Drome, God se Liefde">
+            Little Hearts, Big Dreams, God's Love
+        </h1>
+
+        <p data-en="A safe, loving and Christ-centred place where little ones learn, play and grow."
+           data-af="’n Veilige, liefdevolle en Christus-gesentreerde plek waar kleintjies leer, speel en groei.">
+            A safe, loving and Christ-centred place where little ones learn, play and grow.
+        </p>
+
+        <a href="#about" class="btn"
+           data-en="Discover Our School"
+           data-af="Ontdek Ons Skool">
+            Discover Our School
+        </a>
+
+    </div>
+</section>
+
+
+<!-- =====================================
+     ABOUT US
+===================================== -->
+
+<section id="about">
+    <div class="container about-grid">
+
+        <!-- Replace with your school's photograph -->
+        <img
+            class="about-image"
+            src="b1.jpeg"
+            alt="Shalom Speelskool building"
+            loading="lazy"
+        >
+
+        <div class="about-text">
+
+            <h2 class="section-title"
+                style="text-align:left"
+                data-en="Welcome to Our School"
+                data-af="Welkom by Ons Skool">
+                Welcome to Our School
+            </h2>
+
+            <h3 data-en="Growing Together in God's Love"
+                data-af="Ons Groei Saam in God se Liefde">
+                Growing Together in God's Love
+            </h3>
+
+            <p data-en="At Shalom Learning Centre, we strive to create a home away from home, where every child is welcomed with love, care and understanding. We believe that every child is unique and 
+			develops at their own pace. That is why we provide a safe, happy and stimulating environment where children feel free to explore, play, learn and develop new skills. Through play, practical 
+			activities and daily interaction, we encourage creativity, self-confidence, independence and social development. We aim to support each child’s emotional, physical, social and intellectual 
+			growth while ensuring that every child feels loved, valued and special. At Shalom, we lay the foundation for a lifelong love of learning that children can carry with them as they grow."
+               data-af="By Shalom Speelskool is dit soos ’n tweede huis waar elke kind met liefde, sorg en begrip ontvang word. Ons glo dat elke kind uniek is en teen sy of haar eie tempo ontwikkel. 
+			   Daarom skep ons ’n veilige, gelukkige en stimulerende omgewing waar kinders vry voel om te ontdek, te speel, te leer en nuwe vaardighede aan te leer. Deur spel, praktiese aktiwiteite en 
+			   daaglikse interaksie moedig ons kinders se kreatiwiteit, selfvertroue, onafhanklikheid en sosiale ontwikkeling aan. Ons streef daarna om elke kind se emosionele, fisiese, sosiale en 
+			   intellektuele ontwikkeling te ondersteun, terwyl ons verseker dat elke kleuter geliefd, waardevol en spesiaal voel. By Shalom lê ons die grondslag vir ’n liefde vir leer wat kinders 
+			   deur hul lewens kan saamdra.">
+                At Little Lights Christian Preschool, we believe every child is a precious gift from God. Our goal is to create a happy, safe and stimulating environment where children develop socially, emotionally, physically, intellectually and spiritually.
+            </p>
+
+            <br>
+
+            <div class="verse">
+                <strong data-en="Our Bible Verse"
+                        data-af="Ons Bybelvers">
+                    Our Bible Verse
+                </strong>
+
+                <p data-en="“Let the little children come to me.” — Mark 10:14"
+                   data-af="“Laat die kindertjies na My toe kom.” — Markus 10:14">
+                    “Let the little children come to me.” — Mark 10:14
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================
+     CHRISTIAN VALUES
+===================================== -->
+
+<section class="values-section" id="values">
+    <div class="container">
+
+        <h2 class="section-title"
+            data-en="Faith at the Heart of Everything"
+            data-af="Geloof in die Middelpunt van Alles">
+            Faith at the Heart of Everything
+        </h2>
+
+        <p class="section-subtitle"
+           data-en="We teach children to know God's love and show kindness to everyone."
+           data-af="Ons leer kinders om God se liefde te ken en vriendelikheid aan almal te betoon.">
+            We teach children to know God's love and show kindness to everyone.
+        </p>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <div class="card-icon">✝️</div>
+
+                <h3 data-en="Faith" data-af="Geloof">Faith</h3>
+
+                <p data-en="We introduce children to Bible stories, prayer, worship and God's wonderful creation."
+                   data-af="Ons stel kinders bekend aan Bybelstories, gebed, aanbidding en God se wonderlike skepping.">
+                    We introduce children to Bible stories, prayer, worship and God's wonderful creation.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">❤️</div>
+
+                <h3 data-en="Love" data-af="Liefde">Love</h3>
+
+                <p data-en="We encourage compassion, friendship, sharing and respect for every person."
+                   data-af="Ons moedig omgee, vriendskap, deel en respek vir elke mens aan.">
+                    We encourage compassion, friendship, sharing and respect for every person.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌱</div>
+
+                <h3 data-en="Growth" data-af="Groei">Growth</h3>
+
+                <p data-en="We nurture each child's God-given potential through play, exploration and discovery."
+                   data-af="Ons ontwikkel elke kind se potensiaal deur spel, verkenning en ontdekking.">
+                    We nurture each child's God-given potential through play, exploration and discovery.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================
+     CLASSES AND PROGRAMMES
+===================================== -->
+
+<section id="classes">
+    <div class="container">
+
+        <h2 class="section-title"
+            data-en="Our Classes & Programmes"
+            data-af="Ons Klasse en Programme">
+            Our Classes & Programmes
+        </h2>
+
+        <p class="section-subtitle"
+           data-en="Learning experiences designed for every stage of early childhood."
+           data-af="Leerervarings wat vir elke fase van die vroeë kinderjare ontwerp is.">
+            Learning experiences designed for every stage of early childhood.
+        </p>
+
+        <div class="card-grid">
+
+            <div class="card class-card">
+
+                <img src="8.jpeg"
+                     alt="Babies and young children"
+                     loading="lazy">
+
+                <div class="card-content">
+
+                    <h3 data-en="Gross motor development"
+                        data-af="Rof motoriese ontwikkeling">
+                        Little Lambs
+                    </h3>
+
+                    <p data-en="Gross motor development is important for preschoolers because it develops their large muscles, balance, coordination, and body control. 
+					It helps children run, jump, climb, and balance, builds their self-confidence, and lays an important foundation for learning and everyday activities."
+                       data-af="Grof motoriese ontwikkeling is belangrik by kleuters omdat dit hul groot spiere, balans, koördinasie en liggaamsbeheer ontwikkel. Dit help kinders om te hardloop, 
+					   spring, klim en balanseer, 
+					   bou hul selfvertroue en lê 'n belangrike grondslag vir leer en alledaagse aktiwiteite.">
+                        Gross motor development is important for preschoolers because it develops their large muscles, balance, coordination, and body control. 
+						It helps children run, jump, climb, and balance, builds their self-confidence, 
+						and lays an important foundation for learning and everyday activities.
+                    </p>
+
+                    
+
+                </div>
+            </div>
+
+
+            <div class="card class-card">
+
+                <img src="15.jpeg"
+                     alt="Toddlers enjoying learning activities"
+                     loading="lazy">
+
+                <div class="card-content">
+
+                    <h3 data-en="Art"
+                        data-af="Kuns">
+                        Little Explorers
+                    </h3>
+
+                    <p data-en="Art at preschool stimulates children's creativity, imagination, and self-expression. 
+					Through painting, drawing, cutting, pasting, and working with different materials, they develop fine motor skills, hand-eye coordination, concentration, and self-confidence. 
+					Art gives children the opportunity to explore their own ideas and proudly share their creations."
+                       data-af="Kuns by die kleuterskool stimuleer kinders se kreatiwiteit, verbeelding en selfuitdrukking. 
+					   Deur te verf, teken, knip, plak en met verskillende materiale te werk, ontwikkel hulle fynmotoriese vaardighede, hand-oog-koördinasie, konsentrasie en selfvertroue. 
+					   Kuns gee kinders die geleentheid om hul eie idees te ontdek en met trots hul skeppings te deel.">
+                    Art at preschool stimulates children's creativity, imagination, and self-expression. 
+					Through painting, drawing, cutting, pasting, and working with different materials, they develop fine motor skills, hand-eye coordination, concentration, and self-confidence. 
+					Art gives children the opportunity to explore their own ideas and proudly share their creations
+                    </p>
+
+                    
+
+                </div>
+            </div>
+
+
+            <div class="card class-card">
+
+                <img src="4.jpeg"
+                     alt="Preschool children learning together"
+                     loading="lazy">
+
+                <div class="card-content">
+
+                    <h3 data-en="Fine motor development"
+                        data-af="Fynmotoriese ontwikkeling">
+                        Little Stars
+                    </h3>
+
+                    <p data-en="Fine motor development is important for preschoolers because it strengthens the small muscles in their hands and fingers. 
+					It helps children hold pencils, draw, cut, fasten buttons, and eventually learn to write more easily. 
+					It also promotes hand-eye coordination, concentration, and independence."
+                       data-af="Fynmotoriese ontwikkeling is belangrik by kleuters omdat dit die klein spiere van die hande en vingers versterk. Dit help kinders om potlode vas te hou, te teken, 
+					   te knip, te knoop en later makliker te leer skryf. 
+					   Dit bevorder ook hand-oog-koördinasie, konsentrasie en selfstandigheid.">
+                        Fine motor development is important for preschoolers because it strengthens the small muscles in their hands and fingers. 
+						It helps children hold pencils, draw, cut, fasten buttons, and eventually learn to write more easily. 
+						It also promotes hand-eye coordination, concentration, and independence.
+                    </p>
+
+                    
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- =====================================
+     FEES, HOURS AND ACTIVITIES
+===================================== -->
+
+<section class="fees-section" id="fees">
+    <div class="container">
+
+        <h2 class="section-title"
+            data-en="Our Hours, Fees & Activities"
+            data-af="Ons Tye, Fooie en Aktiwiteite">
+            Our Hours, Fees & Activities
+        </h2>
+
+        <p class="section-subtitle"
+           data-en="Flexible care options and activities in a safe, loving environment."
+           data-af="Buigsame versorgingsopsies en aktiwiteite in 'n veilige, liefdevolle omgewing.">
+            Flexible care options and activities in a safe, loving environment.
+        </p>
+
+        <div class="fees-grid">
+
+            <div class="fees-card">
+                <h3 data-en="🕒 Full-Day and Half-Day Options"
+                    data-af="🕒 Voltydse en Halfdag-opsies">
+                    🕒 Full-Day and Half-Day Options
+                </h3>
+                <p><strong data-en="Operating Hours:" data-af="Skooltye:">Operating Hours:</strong></p>
+                <ul>
+                    <li data-en="Full day: 06:45–17:15" data-af="Voltyds: 06:45–17:15">Full day: 06:45–17:15</li>
+                    <li data-en="Half day: 06:45–13:00" data-af="Halfdag: 06:45–13:00">Half day: 06:45–13:00</li>
+                </ul>
+            </div>
+
+            <div class="fees-card highlight">
+                <h3 data-en="💛 School Fees" data-af="💛 Skoolfooie">💛 School Fees</h3>
+                <ul>
+                    <li data-en="Full day: R2,650 per month" data-af="Voltyds: R2 650 per maand">Full day: R2,650 per month</li>
+                    <li data-en="Half day: R2,350 per month" data-af="Halfdag: R2 350 per maand">Half day: R2,350 per month</li>
+                </ul>
+            </div>
+
+            <div class="fees-card">
+                <h3 data-en="🧩 Daily Occupational Therapy Activities"
+                    data-af="🧩 Daaglikse Arbeidsterapie-aktiwiteite">
+                    🧩 Daily Occupational Therapy Activities
+                </h3>
+                <p data-en="Daily activities that support children's development, coordination and practical skills."
+                   data-af="Daaglikse aktiwiteite wat kinders se ontwikkeling, koördinasie en praktiese vaardighede ondersteun.">
+                    Daily activities that support children's development, coordination and practical skills.
+                </p>
+            </div>
+
+            <div class="fees-card">
+                <h3 data-en="🚐 Transport" data-af="🚐 Vervoer">🚐 Transport</h3>
+                <p data-en="Transport can be arranged upon request at an additional cost."
+                   data-af="Vervoer kan op versoek teen 'n addisionele koste gereël word.">
+                    Transport can be arranged upon request at an additional cost.
+                </p>
+            </div>
+
+            <div class="fees-card">
+                <h3 data-en="🩰 Extramural Activities" data-af="🩰 Buitemuurse Aktiwiteite">
+                    🩰 Extramural Activities
+                </h3>
+                <ul>
+                    <li data-en="Ballet" data-af="Ballet">Ballet</li>
+                    <li data-en="Gymnastics for boys and girls" data-af="Gimnastiek vir seuns en dogters">Gymnastics for boys and girls</li>
+                </ul>
+            </div>
+
+            <div class="fees-card highlight">
+                <h3 data-en="❤️ Safety, Development and Love"
+                    data-af="❤️ Veiligheid, Ontwikkeling en Liefde">
+                    ❤️ Safety, Development and Love
+                </h3>
+                <p data-en="Every child's safety, development and well-being matter to us. We provide a loving environment where children can grow, learn and develop their potential."
+                   data-af="Elke kind se veiligheid, ontwikkeling en welstand is vir ons belangrik. Ons bied 'n liefdevolle omgewing waar kinders kan groei, leer en hul potensiaal ontwikkel.">
+                    Every child's safety, development and well-being matter to us. We provide a loving environment where children can grow, learn and develop their potential.
+                </p>
+            </div>
+
+        </div>
+
+        <p class="fees-motto"
+           data-en="Shalom Learning Centre — Where love and learning grow together ❤️"
+           data-af="Shalom Speelskool — Waar liefde en leer saam groei ❤️">
+            Shalom Learning Centre — Where love and learning grow together ❤️
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =====================================
+     PHOTO GALLERY
+===================================== -->
+
+<section class="gallery-section" id="gallery">
+    <div class="container">
+
+        <h2 class="section-title"
+            data-en="Our Photo Gallery"
+            data-af="Ons Fotogalery">
+            Our Photo Gallery
+        </h2>
+
+        <p class="section-subtitle"
+           data-en="A glimpse into our days of learning, playing and growing together."
+           data-af="'n Kykie na ons dae van saam leer, speel en groei.">
+            A glimpse into our days of learning, playing and growing together.
+        </p>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="10.jpeg"
+                     loading="lazy">
+                <div class="gallery-caption"
+                     data-en="Learning Together"
+                     data-af="Ons Leer Saam">
+                
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="13.jpeg"
+                     loading="lazy">
+                <div class="gallery-caption"
+                     data-en="Outdoor Fun"
+                     data-af="Buitelugpret">
+          
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="9.jpeg"
+                     loading="lazy">
+                <div class="gallery-caption"
+                     data-en="Little Artists"
+                     data-af="Klein Kunstenaars">
+                  
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="11.jpeg"
+                     loading="lazy">
+                <div class="gallery-caption"
+                     data-en="Bible Time"
+                     data-af="Bybeltyd">
+                
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="12.jpeg"
+                     loading="lazy">
+                <div class="gallery-caption"
+                     data-en="Special Celebrations"
+                     data-af="Spesiale Vieringe">
+                
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="14.jpeg"
+                     loading="lazy">
+                <div class="gallery-caption"
+                     data-en="Friendship"
+                     data-af="Vriendskap">
+                 
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =====================================
+     VIDEO GALLERY
+===================================== -->
+
+<section id="videos">
+    <div class="container">
+
+        <h2 class="section-title"
+            data-en="Videos & Special Moments"
+            data-af="Video's en Spesiale Oomblikke">
+            Videos & Special Moments
+        </h2>
+
+        <p class="section-subtitle"
+           data-en="Watch our school activities, celebrations and memorable moments."
+           data-af="Kyk na ons skoolaktiwiteite, vieringe en onvergeetlike oomblikke.">
+            Watch our school activities, celebrations and memorable moments.
+        </p>
+
+        <div class="video-grid">
+
+            <div class="video-card">
+
+                <!-- Replace school-day.mp4 with your video file -->
+                <video controls preload="metadata"
+                       poster="images/video-cover-1.jpg">
+
+                    <source src="v1.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video playback.
+                </video>
+
+                <h3 data-en="Fire fighters visting the school"
+                    data-af="Brandweer wat die skooltjie besoek">
+                    A Day at Our School
+                </h3>
+
+                <p data-en="The firefighters visit the school to teach the children more about what they do and the equipment they use."
+                   data-af="Brandweer wat die skooltjie besoek en vir die kindertjies meer kom leer oor wat hulle doen en al die toerusting wat hulle gebruik.">
+                    See what a normal day at our preschool looks like.
+                </p>
+
+            </div>
+
+
+            <div class="video-card">
+
+                <!-- Replace school-event.mp4 with your video file -->
+                <video controls preload="metadata"
+                       poster="images/video-cover-2.jpg">
+
+                    <source src="v2.mp4"
+                            type="video/mp4">
+
+                    Your browser does not support video playback.
+                </video>
+
+                <h3 data-en="The school visits HBP Fisheries to learn about fish."
+                    data-af="skooltjie wat FISHERIES HBP besoek en leer oor visse ">
+                    School Events & Celebrations
+                </h3>
+
+                <p data-en="The preschool visits HBP Fisheries to learn more about fish and how fish farms work."
+                   data-af="Die skooltjie besoek FISHERIES HBP en leer meer oor vissie en oor hoe visplasse werk">
+                    Memories from our special days and school celebrations.
+                </p>
+
+            </div>
+
+        </div>
+
+        <p style="text-align:center; margin-top:25px;"
+           data-en="You can also add YouTube videos or other hosted videos to this section."
+           data-af="Jy kan ook YouTube-video's of ander aanlynvideo's by hierdie afdeling voeg.">
+            You can also add YouTube videos or other hosted videos to this section.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- =====================================
+     TEACHERS AND STAFF
+===================================== -->
+
+<section class="gallery-section" id="teachers">
+    <div class="container">
+
+        <h2 class="section-title"
+            data-en="Meet Our Team"
+            data-af="Ontmoet Ons Span">
+            Meet Our Team
+        </h2>
+
+        <p class="section-subtitle"
+           data-en="Dedicated hearts, caring hands and a passion for helping children grow."
+           data-af="Toegewyde harte, sorgsame hande en 'n passie om kinders te help groei.">
+            Dedicated hearts, caring hands and a passion for helping children grow.
+        </p>
+
+        <div class="card-grid">
+
+            <div class="card teacher-card">
+
+                <img src="w1.jpeg"
+                     alt="School principal"
+                     loading="lazy">
+
+                <h3 data-en="Principal"
+                    data-af="Skoolhoof">
+                    Principal
+                </h3>
+
+                <p>Sandra Palm</p>
+
+                <p data-en="Leading our school with faith and care. Show love and care for each and every child. "
+                   data-af="Lei ons skool met geloof en omgee. Gee elke kind liefde en gee om vir elke liewe kind.">
+                    Leading our school with faith and care.
+                </p>
+
+            </div>
+
+
+            <div class="card teacher-card">
+
+                <img src="w2.jpeg"
+                     alt="Preschool teacher"
+                     loading="lazy">
+
+                <h3 data-en="Class Teacher"
+                    data-af="Klasonderwyser">
+                    Class Teacher
+                </h3>
+
+                <p>Bianca Nixon</p>
+
+                <p data-en="Encouraging curiosity and learning."
+                   data-af="Moedig nuuskierigheid en leer aan.">
+                    Encouraging curiosity and learning.
+                </p>
+
+            </div>
+
+
+            <div class="card teacher-card">
+
+                <img src="w3.jpeg"
+                     alt="Preschool assistant"
+                     loading="lazy">
+
+                <h3 data-en="Teaching Assistant"
+                    data-af="Onderwysassistent">
+                    Teaching Assistant
+                </h3>
+
+                <p>Olga Makhondo</p>
+
+                <p data-en="Helping every child feel safe and loved."
+                   data-af="Help elke kind om veilig en geliefd te voel.">
+                    Helping every child feel safe and loved.
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================
+     EVENTS AND CALENDAR
+===================================== -->
+
+<section class="events-section" id="events">
+    <div class="container">
+
+        <h2 class="section-title"
+            data-en="School News & Events"
+            data-af="Skoolnuus en Geleenthede">
+            School News & Events
+        </h2>
+
+        <p class="section-subtitle"
+           data-en="Keep up with what's happening at our school."
+           data-af="Bly op hoogte van wat by ons skool gebeur.">
+            Keep up with what's happening at our school.
+        </p>
+
+        <div class="card-grid">
+
+            <div class="card event-card">
+                <p class="6 Januarie maak skool oop"
+                   data-en="6 January"
+                   data-af="6 Januarie">
+                    ADD EVENT DATE
+                </p>
+
+                <h3 data-en="School Opening"
+                    data-af="Skooltjie maak oop">
+                    Parent Meetings
+                </h3>
+
+                <p data-en="School opens for the a new year full of fun, adventer and learning."
+                   data-af="Skooltjie maak vir 'n nuwe jaar vol van pret, avonture en leer.">
+                    Updates and conversations about your child's development.
+                </p>
+            </div>
+
+            <div class="card event-card">
+                <p class="event-date"
+                   data-en="4 Desember"
+                   data-af="4 Desember">
+                    ADD EVENT DATE
+                </p>
+
+                <h3 data-en="Celebrating Little Achievers"
+                    data-af="Ons Vier Ons Klein Presteerders">
+                    Family Fun Day
+                </h3>
+
+                <p data-en="A special day for families to enjoy and see what their little ones have achieved and learned. "
+                   data-af="'n Spesiale dag vir gesinne om te geniet en sien wat hulle kleintjies bereik het en geleer het.">
+                    A special day for families to enjoy activities together.
+                </p>
+            </div>
+
+            <div class="card event-card">
+                <p class="event-date"
+                   data-en="11 Desember"
+                   data-af="11 Desember">
+                    ADD EVENT DATE
+                </p>
+
+                <h3 data-en="School closes"
+                    data-af="Skooltjie sluit">
+                    End-of-Year Celebration
+                </h3>
+
+                <p data-en="School closes for the end of the year until  next year"
+                   data-af="Skooltjie sluit vir die einde van die jaar tot en met volgende jaar">
+                    Celebrating a year of learning, friendship and growth.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================
+     ADMISSIONS
+===================================== -->
+
+<section id="admissions">
+    <div class="container">
+
+        <div class="admissions-box">
+
+            <h2 data-en="Join Our Little Family"
+                data-af="Word Deel van Ons Kleinfamilie">
+                Join Our Little Family
+            </h2>
+
+            <p data-en="We would love to welcome your family to our school. Contact us to learn about available places, school fees and our registration process."
+               data-af="Ons verwelkom jou gesin graag by ons skool. Kontak ons vir meer inligting oor beskikbare plekke, skoolfooie en die registrasieproses.">
+                We would love to welcome your family to our school. Contact us to learn about available places, school fees and our registration process.
+            </p>
+
+            <a href="#contact"
+               class="btn"
+               data-en="Enquire About Enrolment"
+               data-af="Doen Navraag oor Inskrywing">
+                Enquire About Enrolment
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================
+     CONTACT INFORMATION
+===================================== -->
+
+<section id="contact">
+    <div class="container">
+
+        <h2 class="section-title"
+            data-en="Get in Touch"
+            data-af="Kom in Kontak">
+            Get in Touch
+        </h2>
+
+        <p class="section-subtitle"
+           data-en="We would love to hear from you."
+           data-af="Ons hoor graag van jou.">
+            We would love to hear from you.
+        </p>
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <h3 data-en="Contact Details"
+                    data-af="Kontakbesonderhede">
+                    Contact Details
+                </h3>
+
+                
+			<p>
+				📍<strong>Address:</strong>
+				<a href="https://maps.app.goo.gl/1UTHd7JEPgGM9vbs7"
+				target="_blank"
+				rel="noopener noreferrer">
+				R511, Beethoven Street, Melodi, Hartbeespoort
+				</a>
+</p>
+
+
+                <p>
+                    📞 <strong data-en="Phone:"
+                               data-af="Telefoon:">Pho:</strong>
+                    <a href="tel:+27 83 651 0715">
+                        +27 83 651 0715
+                    </a>
+                </p>
+
+                <p>
+                    ✉️ <strong data-en="Email:"
+                               data-af="E-pos:">Email:</strong>
+                    <a href="shalom.hartebeespoort@gmail.com">
+                        shalom.hartebeespoort@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    🕒 <strong data-en="School Hours:"
+                               data-af="Skoolure:">School Hours:</strong>
+                    <span data-en="Monday – Friday, 6:45 - 17:15"
+                          data-af="Maandag – Vrydag, 6:45 - 17:15">
+                        Monday – Friday, 6:45 - 17:15
+                    </span>
+                </p>
+
+                <br>
+
+            </div>
+
+
+            <!--
+                DEMO FORM:
+                This form needs a backend or form service to send messages.
+                The JavaScript below opens an email draft instead.
+            -->
+
+            
+<form id="contactForm">
+
+    <label for="parentName">Parent's Name</label>
+    <input
+        type="text"
+        id="parentName"
+        name="parentName"
+        autocomplete="name"
+        required
+    >
+
+    <label for="parentEmail">Your Email</label>
+    <input
+        type="email"
+        id="parentEmail"
+        name="parentEmail"
+        autocomplete="email"
+        required
+    >
+
+    <label for="childAge">Child's Age Group</label>
+    <select id="childAge" name="childAge" required>
+        <option value="">Select an age group</option>
+        <option value="1 to 2 years">1 to 2 years</option>
+        <option value="2 to 3 years">2 to 3 years</option>
+        <option value="3 to 4 years">3 to 4 years</option>
+        <option value="4 to 5 years">4 to 5 years</option>
+    </select>
+
+    <label for="message">Your Message</label>
+    <textarea
+        id="message"
+        name="message"
+        rows="5"
+        required
+    ></textarea>
+
+    <button
+        type="submit"
+        class="btn"
+        style="margin-top:15px; width:100%;"
+    >
+        Prepare Email
+    </button>
+
+    <p class="form-note">
+        This will open your email application.
+        Please review your message and press Send.
+    </p>
+
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener(
+    "submit",
+    function(event) {
+        event.preventDefault();
+
+        // CHANGE THIS TO YOUR SCHOOL'S EMAIL ADDRESS
+        const schoolEmail = "shalom.hartebeespoort@gmail.com";
+
+        const parentName =
+            document.getElementById("parentName").value;
+
+        const parentEmail =
+            document.getElementById("parentEmail").value;
+
+        const childAge =
+            document.getElementById("childAge").value;
+
+        const message =
+            document.getElementById("message").value;
+
+        const subject = "Preschool Enquiry";
+
+        const body =
+            "Parent's Name: " + parentName + "\n" +
+            "Parent's Email: " + parentEmail + "\n" +
+            "Child's Age Group: " + childAge + "\n\n" +
+            "Message:\n" + message;
+
+        const mailto =
+            "mailto:" + schoolEmail +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+
+        window.location.href = mailto;
+    }
+);
+</script>
+
+<style>
+#contactForm label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font: inherit;
+}
+
+#contactForm textarea {
+    resize: vertical;
+}
+
+#contactForm .btn {
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background-color: #386641;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#contactForm .btn:hover {
+    background-color: #2d5234;
+}
+
+#contactForm .form-note {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #666;
+}
+</style>
+
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <h2>✨ Shalom Speelskool/Learning Centre</h2>
+
+    <p data-en="Let your light shine. — Matthew 5:16"
+       data-af="Laat julle lig skyn. — Matteus 5:16">
+        Let your light shine. — Matthew 5:16
+    </p>
+
+    <p data-en="Growing in faith, learning with love."
+       data-af="Groei in geloof, leer met liefde.">
+        Growing in faith, learning with love.
+    </p>
+
+    <p>
+        &copy; <span id="year"></span>
+        Shalom Speelskool/Learning Centre
+    </p>
+
+    <p data-en="All rights reserved."
+       data-af="Alle regte voorbehou.">
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+    /*
+       BILINGUAL LANGUAGE SWITCHER
+       English = en
+       Afrikaans = af
+    */
+
+    function setLanguage(language) {
+
+        document.documentElement.lang = language;
+
+        // Update all elements with bilingual text.
+        document.querySelectorAll("[data-en][data-af]").forEach(element => {
+
+            const translatedText = element.getAttribute(
+                language === "af" ? "data-af" : "data-en"
+            );
+
+            // Update the element's text while keeping child elements intact.
+            // Elements containing other HTML are handled separately below.
+            if (element.children.length === 0) {
+                element.textContent = translatedText;
+            }
+        });
+
+        // Update language buttons.
+        document.getElementById("englishBtn")
+            .classList.toggle("active", language === "en");
+
+        document.getElementById("afrikaansBtn")
+            .classList.toggle("active", language === "af");
+
+        // Translate the options inside the age-group selector.
+        document.querySelectorAll("#childAge option[data-en]").forEach(option => {
+            option.textContent = option.getAttribute(
+                language === "af" ? "data-af" : "data-en"
+            );
+        });
+
+        // Remember language choice on this device.
+        try {
+            localStorage.setItem("preschoolLanguage", language);
+        } catch (error) {
+            // The website still works if local storage is unavailable.
+        }
+    }
+
+    // Set the current year automatically.
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    /*
+       CONTACT FORM
+       Opens an email draft rather than pretending to send a message.
+       Replace info@example.com with the school's real email address.
+    */
+
+    document.getElementById("contactForm").addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("parentName").value.trim();
+            const email = document.getElementById("parentEmail").value.trim();
+            const age = document.getElementById("childAge").value;
+            const message = document.getElementById("message").value.trim();
+
+            const subject = encodeURIComponent(
+                "Preschool Enquiry / Kleuterskoolnavraag"
+            );
+
+            const body = encodeURIComponent(
+                "Name / Naam: " + name +
+                "\nEmail / E-pos: " + email +
+                "\nChild's age group / Kind se ouderdomsgroep: " + age +
+                "\n\nMessage / Boodskap:\n" + message
+            );
+
+            // Change this to the school's real email address.
+            const schoolEmail = "info@example.com";
+
+            window.location.href =
+                "mailto:" + schoolEmail +
+                "?subject=" + subject +
+                "&body=" + body;
+        }
+    );
+
+
+    // Load the saved language when possible.
+    let savedLanguage = "en";
+
+    try {
+        savedLanguage = localStorage.getItem("preschoolLanguage") || "en";
+    } catch (error) {
+        savedLanguage = "en";
+    }
+
+    setLanguage(savedLanguage);
+</script>
+
+</body>
+</html>
